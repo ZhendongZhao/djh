@@ -16,21 +16,21 @@ import java.util.List;
  * @date: 2019-11-20 16:13
  */
 @RestController
-@RequestMapping(value="/users")
+@RequestMapping(value = "/users")
 public class MyRestController {
 
     @ApiOperation(value = "获取用户信息")
-    @RequestMapping(value="/{user}", method= RequestMethod.GET)
+    @RequestMapping(value = "/{user}", method = RequestMethod.GET)
     public ResponseEntity<User> getUser(@PathVariable Long user) {
         return null;
     }
 
-    @RequestMapping(value="/{user}/customers", method=RequestMethod.GET)
+    @RequestMapping(value = "/{user}/customers", method = RequestMethod.GET)
     ResponseEntity<List<Customer>> getUserCustomers(@PathVariable Long user) {
         return null;
     }
 
-    @RequestMapping(value="/{user}", method=RequestMethod.DELETE)
+    @RequestMapping(value = "/{user}", method = RequestMethod.DELETE)
     public ResponseEntity<User> deleteUser(@PathVariable Long user) {
         return null;
     }

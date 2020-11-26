@@ -1,6 +1,7 @@
 package com.springboot.zzd.djh.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  */
 public class RedisBean {
 
+    @Qualifier("redis")
     private StringRedisTemplate redisTemplate;
 
     @Autowired

@@ -6,6 +6,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -22,10 +23,10 @@ public class SwaggerConfiguration {
     public Docket creatRestfulApi(){
 
         return new Docket(DocumentationType.SWAGGER_2)
-                .pathMapping("/")
+                .groupName("djh")
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.springboot.zzd.djh"))
+                .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.ant("/djh/**"))
                 .build();
     }
@@ -33,7 +34,8 @@ public class SwaggerConfiguration {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("springboot利用swagger构建api文档")
-                .description("restful风格")
-                .version("1.0").build();
+                .contact(new Contact("djh", "localhost:8080", "zhaozhendong1026@163.com"))
+                .version("1.0")
+                .build();
     }
 }
